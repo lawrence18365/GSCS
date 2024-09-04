@@ -224,7 +224,7 @@
             line-height: 1.2;
         }
 
-        .service-highlights {
+      .service-highlights {
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -250,10 +250,9 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .highlight-item img {
-            width: 60px;
-            height: 60px;
-            filter: hue-rotate(120deg) brightness(1.5);
+        .highlight-item i {
+            font-size: 3rem;
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
 
@@ -458,32 +457,65 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+       .contact {
+            background-color: var(--bg-color);
             color: var(--text-color);
-            font-weight: 600;
+            padding: 4rem 0;
+            position: relative;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif;
+        .contact::before {
+            content: none;
         }
 
-        .form-group input:focus,
-.form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(64, 169, 243, 0.2);
+        .contact .section-title {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .contact-map {
+            flex: 1;
+            height: 400px;
+            background-image: url('https://i.ibb.co/qCjBqGb/sydney-map.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form-container {
+            flex: 1;
+            padding-left: 2rem;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
         }
 
         .btn-submit {
@@ -643,6 +675,27 @@
             .about-image {
                 width: 100%;
             }
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .contact-map {
+                height: 200px;
+                margin-bottom: 2rem;
+            }
+
+            .contact-form-container {
+                padding-left: 0;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+        }
 
             .testimonial-grid {
                 grid-template-columns: 1fr;
@@ -724,28 +777,27 @@
         </div>
     </section>
 
-    <section id="services" class="services">
+   <section id="services" class="services">
         <div class="container">
             <div class="section-heading">
                 <h3>PROVIDING SAME-DAY<br>PLUMBING SERVICES!</h3>
             </div>
             <div class="service-highlights">
                 <div class="highlight-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1067/1067555.png" alt="Satisfaction Guaranteed">
+                    <i class="fas fa-check-circle"></i>
                     <span>Satisfaction Always Guaranteed</span>
                 </div>
                 <div class="highlight-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2784/2784459.png" alt="24/7 Emergency service">
+                    <i class="fas fa-clock"></i>
                     <span>24/7 Emergency service</span>
                 </div>
                 <div class="highlight-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2910/2910756.png" alt="Licensed and Insured">
+                    <i class="fas fa-shield-alt"></i>
                     <span>Licensed and Insured</span>
                 </div>
             </div>
         </div>
     </section>
-
     <section class="services-grid">
         <div class="services-container">
             <div class="service-card">
@@ -881,7 +933,7 @@
                             <h4>Dean Fox</h4>
                             <div class="star-rating">
                                 <i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -893,28 +945,47 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
+ <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-map"></div>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Needed</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="emergency">Emergency Plumbing</option>
+                                    <option value="blocked-drains">Blocked Drains</option>
+                                    <option value="bathroom-reno">Bathroom Renovations</option>
+                                    <option value="gas-fitting">Gas Fitting</option>
+                                    <option value="pipe-repair">Pipe Repairs</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
 
