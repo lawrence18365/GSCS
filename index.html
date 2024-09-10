@@ -612,26 +612,33 @@ header .container {
 
 .testimonial-footer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
 }
+
 .testimonial-author {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .testimonial-author h4 {
     font-size: 1.2rem;
     color: var(--secondary-color);
     margin: 0;
-    margin-right: 700px;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
 
 .star-rating {
     color: #ffc107;
     font-size: 1.2rem;
+    margin-left: auto;
 }
 
 .star {
@@ -666,12 +673,6 @@ header .container {
     background-color: var(--secondary-color);
     transform: scale(1.1);
 }
-.testimonial-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-}
 
 .review-source {
     display: flex;
@@ -679,9 +680,9 @@ header .container {
 }
 
 .google-icon {
-    width: 40px;
-    height: 40px;
-   margin-right: 10px; /* Adjust spacing between logo and name */
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
 
 @media (max-width: 768px) {
@@ -693,15 +694,23 @@ header .container {
         font-size: 1rem;
     }
 
+    .testimonial-author {
+        flex-wrap: nowrap;
+    }
+
     .testimonial-author h4 {
         font-size: 1.1rem;
+        max-width: calc(100% - 100px); /* Adjust based on your needs */
     }
 
     .star-rating {
         font-size: 1rem;
     }
-}
 
+    .testimonial-card {
+        padding: 20px;
+    }
+}
 /* Contact Section */
 .contact {
     background-color: var(--primary-color);
