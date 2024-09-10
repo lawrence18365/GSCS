@@ -88,33 +88,6 @@ header .container {
     padding: 0;
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links li {
-    list-style: none;
-    margin-left: 2rem;
-}
-
-.nav-links a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 200;
-    transition: color 0.3s ease;
-    font-size: 1.1rem;
-    margin-left: auto;
-}
-
-.nav-links a:hover {
-    color: var(--accent-color);
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-left: 3px solid var(--white);
-    padding: 0.5rem 1rem;
-}
-
 /* CTA Button in Header */
 .header-cta {
     display: flex;
@@ -876,35 +849,6 @@ header .container {
         height: 50px;
     }
 
-    .menu-toggle {
-        display: block;
-        font-size: 20px;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin: 1rem 0;
-    }
-
-    .nav-links a {
-        color: var(--white);
-    }
-
     .hero-content {
         padding: 1rem;
     }
@@ -1003,14 +947,6 @@ header .container {
             <button class="menu-toggle" aria-expanded="false" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="./#services">Services</a></li>
-                    <li><a href="./#about">About</a></li>
-                    <li><a href="./#testimonials">Testimonials</a></li>
-                    <li><a href="./#contact">Contact</a></li>
-                </ul>
-            </nav>
             <a href="tel:0423079958" class="header-cta">
                 <i class="fas fa-phone"></i>
                 <span>0423 079 958</span>
