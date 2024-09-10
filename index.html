@@ -379,25 +379,101 @@ header .container {
 
 /* About Section */
 .about {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    padding: 4rem 0;
     position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.about-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.about .container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-heading h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    gap: 4rem;
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    gap: 50px;
 }
 
 .about-text {
     flex: 1;
-    padding: 3rem;
+}
+
+.highlight-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.feature span {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.btn-learn-more {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-learn-more:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-image {
@@ -405,22 +481,69 @@ header .container {
     position: relative;
 }
 
-.about-image img {
+.main-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.about-text h2 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+.main-image:hover {
+    transform: scale(1.05);
 }
 
-.about-text p {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.experience-badge .years {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.experience-badge .text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .experience-badge {
+        bottom: 10px;
+        right: 10px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .experience-badge .years {
+        font-size: 1.5rem;
+    }
+
+    .experience-badge .text {
+        font-size: 0.8rem;
+    }
 }
 
 /* Testimonials Section */
@@ -965,23 +1088,42 @@ box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
         </div>
     </div>
 </section>
-  <section id="about" class="about">
-        <div class="container">
-            <div class="section-heading">
-                <h2>About Us</h2>             
-            </div>            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>With over a decade of experience serving Sydney's Eastern Suburbs, DR H2O has become the go-to plumbing service for all your needs.</p>
-                    <p>Based in Randwick, NSW 2031, our team of fully licensed professionals is committed to providing solutions that last.</p>
-                    <p>We're more than just plumbers – we're your neighbors. When you choose DR H2O, you're choosing a team that values your time, respects your home, and delivers results that exceed your expectations.</p>
+ <section id="about" class="about">
+    <div class="about-background"></div>
+    <div class="container">
+        <div class="section-heading">
+            <h2>About Us</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="highlight-text">With over a decade of experience serving Sydney's Eastern Suburbs, DR H2O has become the go-to plumbing service for all your needs.</p>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Based in Randwick, NSW 2031</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-certificate"></i>
+                        <span>Fully licensed professionals</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-home"></i>
+                        <span>Your trusted neighbors</span>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://i.ibb.co/4gGDpFq/Untitled-design-4.png" alt="DR H2O Plumber at work">
+                <p>We're more than just plumbers – we're your neighbors. When you choose DR H2O, you're choosing a team that values your time, respects your home, and delivers results that exceed your expectations.</p>
+                <a href="#contact" class="btn-learn-more">Get to Know Us</a>
+            </div>
+            <div class="about-image">
+                <img src="https://i.ibb.co/4gGDpFq/Untitled-design-4.png" alt="DR H2O Plumber at work" class="main-image">
+                <div class="experience-badge">
+                    <span class="years">10+</span>
+                    <span class="text">Years of<br>Experience</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
 <section id="testimonials" class="testimonials">
@@ -1109,8 +1251,8 @@ box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
     </footer>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // DOM elements
+  document.addEventListener('DOMContentLoaded', function() {
+    // Existing code...
     const header = document.querySelector('header');
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -1239,6 +1381,14 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => document.body.removeChild(notification), 300);
         }, 5000);
     }
+
+    // New: Parallax effect for About Us section
+    const aboutBackground = document.querySelector('.about-background');
+    
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        aboutBackground.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+    });
 });
 </script>
 </body>
