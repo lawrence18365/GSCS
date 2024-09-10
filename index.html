@@ -227,6 +227,7 @@ header .container {
 
 .services-text {
     flex: 1;
+    text-align: center;
 }
 
 .section-heading h2 {
@@ -239,14 +240,17 @@ header .container {
 }
 
 .services-text p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #555;
     margin-bottom: 30px;
     line-height: 1.6;
+    text-align: center;
+    width: 100%;
 }
 
 .btn-primary {
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
     padding: 12px 24px;
     background-color: var(--accent-color);
     color: #fff;
@@ -254,6 +258,7 @@ header .container {
     border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .btn-primary:hover {
@@ -301,7 +306,6 @@ header .container {
     color: #666;
     line-height: 1.4;
 }
-
 @media (max-width: 768px) {
     .services-content {
         flex-direction: column;
@@ -422,7 +426,7 @@ header .container {
 }
 
 .highlight-text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: var(--secondary-color);
     margin-bottom: 20px;
@@ -448,19 +452,20 @@ header .container {
 }
 
 .feature span {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--text-color);
 }
 
 .about-text p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     color: var(--text-color);
     margin-bottom: 20px;
 }
 
 .btn-learn-more {
-    display: inline-block;
+    display: block;
+    margin: 30px auto 0;
     padding: 12px 24px;
     background-color: var(--accent-color);
     color: #fff;
@@ -468,6 +473,7 @@ header .container {
     border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .btn-learn-more:hover {
@@ -475,7 +481,6 @@ header .container {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .about-image {
     flex: 1;
     position: relative;
@@ -623,8 +628,8 @@ header .container {
 }
 
 .google-icon {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
 }
 
@@ -645,7 +650,6 @@ header .container {
     height: 1em;
     margin: 0 1px;
 }
-
 .testimonial-controls {
     display: flex;
     justify-content: center;
@@ -715,22 +719,23 @@ header .container {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
-
 }
 
 .contact-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .contact-image {
-    width: 45%;
+    width: 48%;
     position: relative;
 }
 
 .contact-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -748,7 +753,7 @@ header .container {
 }
 
 .contact-form {
-    width: 45%;
+    width: 48%;
     background-color: var(--white);
     padding: 2rem;
     border-radius: 10px;
@@ -778,7 +783,7 @@ header .container {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
+    box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
 }
 
 .btn-submit {
@@ -796,7 +801,6 @@ box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
 .btn-submit:hover {
     background-color: var(--accent-color-hover);
 }
-
 /* Footer */
 .site-footer {
     background-color: var(--secondary-color);
@@ -927,12 +931,14 @@ box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
     .service-highlights {
         width: 100%;
     }
-      .services-text p,{
-        width: 60%;
-    }
 
     .services-text {
         margin-bottom: 2rem;
+    }
+
+    .services-text p {
+        width: 60%;
+        font-size: 1rem;
     }
 
     .services-container {
@@ -958,6 +964,10 @@ box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
         margin-bottom: 2rem;
     }
 
+    .contact-image img {
+        height: auto;
+    }
+
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -967,6 +977,20 @@ box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
     .footer-links {
         margin-bottom: 1rem;
     }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .highlight-text {
+        font-size: 1.2rem;
+    }
+
+    .feature span {
+        font-size: 1rem;
+    }
+}
+
 }
 </style>
 </head>
