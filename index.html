@@ -612,33 +612,31 @@ header .container {
 
 .testimonial-footer {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
 }
 
-.testimonial-author {
+.review-source {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-    width: 100%;
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
 
 .testimonial-author h4 {
     font-size: 1.2rem;
     color: var(--secondary-color);
     margin: 0;
-    margin-left: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .star-rating {
     color: #ffc107;
     font-size: 1.2rem;
-    margin-left: auto;
 }
 
 .star {
@@ -674,17 +672,6 @@ header .container {
     transform: scale(1.1);
 }
 
-.review-source {
-    display: flex;
-    align-items: center;
-}
-
-.google-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-}
-
 @media (max-width: 768px) {
     .section-heading h2 {
         font-size: 2rem;
@@ -694,13 +681,18 @@ header .container {
         font-size: 1rem;
     }
 
-    .testimonial-author {
-        flex-wrap: nowrap;
+    .testimonial-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .review-source {
+        margin-bottom: 10px;
     }
 
     .testimonial-author h4 {
         font-size: 1.1rem;
-        max-width: calc(100% - 100px); /* Adjust based on your needs */
+        margin-bottom: 5px;
     }
 
     .star-rating {
@@ -1157,7 +1149,6 @@ box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
     </div>
 </section>
 
-
 <section id="testimonials" class="testimonials">
     <div class="container">
         <div class="section-heading">
@@ -1170,9 +1161,9 @@ box-shadow: 0 0 0 2px rgba(0, 119, 190, 0.2);
                         <p>"I can't recommend DR H2O enough. They're not just skilled at what they do, but also incredibly honest and reliable. This plumber has consistently delivered top-notch service, always going above and beyond. I've been using their services for 7 years."</p>
                     </div>
                     <div class="testimonial-footer">
-                           <div class="review-source">
-                              <img src="https://i.postimg.cc/d0XqzkLY/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google" class="google-icon">
-                           </div>
+                        <div class="review-source">
+                            <img src="https://i.postimg.cc/d0XqzkLY/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google" class="google-icon">
+                        </div>
                         <div class="testimonial-author">
                             <h4>Martha Nissirios</h4>
                         </div>
