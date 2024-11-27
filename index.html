@@ -2665,7 +2665,30 @@ transition: color 0.3s ease;
 .footer-right a:hover {
 color: var(--fsp-blue);
 }
+.designer-signature {
+    margin-top: 24px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+}
 
+.designer-signature a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.designer-signature a:hover {
+    color: var(--fsp-blue);
+}
+
+@media (max-width: 768px) {
+    .designer-signature {
+        margin-top: 16px;
+        padding-top: 16px;
+    }
+}
 /* Mobile Styles */
 @media (max-width: 1024px) {
 .footer {
@@ -4074,27 +4097,29 @@ document.querySelectorAll('.region-card').forEach(card => {
 
     <!-- Footer Bottom -->
     <div class="footer-secondary">
-        <div class="footer-bottom-content">
-            <div class="footer-left">
-                <span class="copyright">© 2024 Flow State Painting</span>
-            </div>
-            
-            <div class="footer-center">
-                <div class="social-links">
-                    <a href="#" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-right">
-                <a href="/privacy">Privacy</a>
-                <a href="/terms">Terms</a>
+    <div class="footer-bottom-content">
+        <div class="footer-left">
+            <span class="copyright">© 2024 Flow State Painting</span>
+        </div>
+        <div class="footer-center">
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
             </div>
         </div>
+        <div class="footer-right">
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+        </div>
+    </div>
+    <div class="designer-signature">
+        <a href="https://www.astradesigns.info/" target="_blank" rel="noopener noreferrer">
+            Designed by Astra Designs
+        </a>
     </div>
 </div>
 </footer>
