@@ -331,7 +331,7 @@ top: 0; /* Adjust nav to top when scrolled */
 }
 
 .nav-logo {
-    width: 420px;
+    width: 720px;
     height: auto;
     margin-top: -100px;
     border-radius: 10px;
@@ -433,7 +433,7 @@ top: 0; /* Adjust nav to top when scrolled */
     }
 
     .nav-logo {
-        width: 350px;
+        width: 450px;
 margin-top: -140px;
 border-radius: 50px;
         margin-bottom: 20px;
@@ -1796,272 +1796,6 @@ margin-left: 0;
 }
 
 @media (max-width: 480px) {
-.action-card {
-    padding: 1.5rem;
-}
-
-.card-headline {
-    font-size: 1.5rem;
-}
-
-.action-features {
-    padding: 1.25rem;
-}
-}
-.service-area {
-padding: clamp(3rem, 8vw, 6rem) var(--space-md);
-background: var(--fsp-black);
-min-height: 90vh;
-display: flex;
-align-items: center;
-position: relative;
-overflow: hidden;
-}
-
-.service-area::before {
-content: '';
-position: absolute;
-width: 100%;
-height: 100%;
-background: radial-gradient(
-    circle at 50% 50%,
-    rgba(85, 59, 139, 0.08) 0%,
-    transparent 70%
-);
-pointer-events: none;
-}
-
-.service-area-container {
-max-width: 1400px;
-width: 100%;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: clamp(1.5rem, 4vw, 3rem);
-position: relative;
-z-index: 1;
-}
-
-.service-box {
-aspect-ratio: 1;
-position: relative;
-border-radius: 24px;
-background: rgba(255, 255, 255, 0.02);
-backdrop-filter: blur(10px);
-overflow: hidden;
-}
-
-.glow-effect {
-position: absolute;
-inset: 0;
-border-radius: inherit;
-padding: 1px;
-background: linear-gradient(
-    180deg,
-    rgba(139, 122, 176, 0.2),
-    rgba(85, 59, 139, 0.2)
-);
--webkit-mask: 
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-mask: 
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
--webkit-mask-composite: xor;
-mask-composite: exclude;
-}
-
-/* Map Box Styles */
-.image-container {
-width: 100%;
-height: 100%;
-padding: 1px;
-}
-
-.image-wrapper {
-width: 100%;
-height: 100%;
-position: relative;
-border-radius: 24px;
-overflow: hidden;
-}
-
-.map-image {
-width: 100%;
-height: 100%;
-transform: scale(1.01);
-transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.map-box:hover .map-image {
-transform: scale(1.05);
-}
-
-.map-overlay {
-position: absolute;
-inset: 0;
-background: linear-gradient(
-    180deg,
-    rgba(85, 59, 139, 0.2) 0%,
-    rgba(85, 59, 139, 0.1) 100%
-);
-pointer-events: none;
-}
-
-/* Content Box Styles */
-.content-box {
-display: flex;
-flex-direction: column;
-}
-
-.content-inner {
-padding: clamp(2rem, 4vw, 3rem);
-height: 100%;
-display: flex;
-flex-direction: column;
-}
-
-.title-section {
-margin-bottom: clamp(2rem, 4vw, 3rem);
-}
-
-.gradient-text {
-font-size: clamp(2rem, 4vw, 2.5rem);
-font-weight: 300;
-letter-spacing: -0.02em;
-background: var(--fsp-purple-gradient);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-margin-bottom: 0.5rem;
-}
-
-.subtitle {
-color: var(--fsp-cream);
-opacity: 0.7;
-font-size: clamp(1rem, 1.5vw, 1.1rem);
-}
-
-.regions-container {
-display: grid;
-gap: 2rem;
-margin-bottom: auto;
-}
-
-.region h3 {
-color: var(--fsp-purple-light);
-font-size: 1.125rem;
-margin-bottom: 1rem;
-letter-spacing: 0.5px;
-}
-
-.region ul {
-display: grid;
-gap: 0.75rem;
-list-style: none;
-}
-
-.region li {
-display: flex;
-align-items: center;
-gap: 0.75rem;
-color: var(--fsp-cream);
-opacity: 0.8;
-transition: all 0.3s ease;
-}
-
-.region li:hover {
-opacity: 1;
-transform: translateX(4px);
-}
-
-.location-marker {
-width: 6px;
-height: 6px;
-background: var(--fsp-purple-light);
-border-radius: 50%;
-position: relative;
-}
-
-.location-marker::after {
-content: '';
-position: absolute;
-inset: -2px;
-border-radius: 50%;
-background: var(--fsp-purple-light);
-opacity: 0.3;
-transform: scale(0);
-transition: transform 0.3s ease;
-}
-
-.region li:hover .location-marker::after {
-transform: scale(1);
-}
-
-.cta-button {
-position: relative;
-display: inline-flex;
-align-items: center;
-gap: 0.75rem;
-padding: 0.875rem 1.5rem;
-border-radius: 100px;
-color: var(--fsp-cream);
-text-decoration: none;
-overflow: hidden;
-isolation: isolate;
-align-self: flex-start;
-margin-top: 2rem;
-}
-
-.cta-background {
-position: absolute;
-inset: 0;
-background: var(--fsp-purple-gradient);
-z-index: -1;
-transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-transform: translateY(-2px);
-}
-
-.cta-button:hover .cta-icon {
-transform: translateX(4px);
-}
-
-.cta-icon {
-transition: transform 0.3s ease;
-}
-
-@media (max-width: 1024px) {
-.service-area {
-    padding: var(--space-lg) var(--space-md);
-    min-height: auto;
-}
-
-.content-inner {
-    padding: var(--space-md);
-}
-}
-
-@media (max-width: 768px) {
-.service-area-container {
-    grid-template-columns: 1fr;
-}
-
-.service-box {
-    aspect-ratio: auto;
-}
-
-.image-wrapper {
-    aspect-ratio: 4/3;
-}
-
-.content-inner {
-    padding: var(--space-md);
-}
-}
-
-@media (max-width: 480px) {
 .gradient-text {
     font-size: 1.75rem;
 }
@@ -3138,9 +2872,8 @@ color: var(--fsp-blue);
 <!-- Hero Section -->
 <section class="hero" id="home">
     <div class="hero-container">
-        <img src="https://i.postimg.cc/fTggqVhF/Untitled-design-1.png" alt="Flow State Painting" class="nav-logo">
+        <img src="https://i.postimg.cc/2jcjWj6K/download.jpg" alt="Flow State Painting" class="nav-logo">
         <div class="hero-content">
-            <p class="hero-subtitle">Specializing in new homes and repaints from Tweed Heads to Evans Head</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn">Get a Quote</a>
             </div>
@@ -3371,6 +3104,8 @@ color: var(--fsp-blue);
     <div class="cta-value">
         <div class="value-metrics">
             <div class="metric">
+                                <span class="metric-value">10+</span>
+
                 <span class="metric-label">Years Experience</span>
             </div>
             <div class="metric-divider"></div>
@@ -3429,68 +3164,519 @@ color: var(--fsp-blue);
 </div>
 </section>
 
-<section class="service-box">
-    <div class="glow-effect"></div>
-    <div class="content-inner">
-        <div class="title-section">
-            <h2 class="gradient-text">Service Areas</h2>
-            <p class="subtitle">Northern Rivers Premium Painters</p>
-        </div>
-        
+<section class="coverage-areas">
+    <div class="cosmic-grid">
+        <div class="grid-overlay"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <header class="areas-header" data-aos="fade-up">
+            <span class="areas-overline">Coverage Areas</span>
+            <h2 class="areas-title">Service Regions</h2>
+            <div class="areas-divider">
+                <div class="divider-line"></div>
+                <div class="divider-diamond"></div>
+                <div class="divider-line"></div>
+            </div>
+            <p class="areas-subtitle">Northern Rivers Premier Painting Services</p>
+        </header>
+
         <div class="regions-container">
-            <div class="region">
-                <h3>Tweed Region</h3>
-                <ul>
-                    <li>
-                        <span class="location-marker"></span>
-                        <span>Tweed Heads</span>
-                    </li>
-                    <li>
-                        <span class="location-marker"></span>
-                        <span>Kingscliff</span>
-                    </li>
-                    <li>
-                        <span class="location-marker"></span>
-                        <span>Casuarina</span>
-                    </li>
-                </ul>
+            <!-- Tweed Region -->
+            <div class="region-block" data-aos="fade-right">
+                <div class="region-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="region-header">
+                            <span class="region-marker">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="marker-ring"></div>
+                            </span>
+                            <h3>Tweed Region</h3>
+                        </div>
+                        <ul class="location-list">
+                            <li>
+                                <div class="location-dot">
+                                    <div class="dot-pulse"></div>
+                                </div>
+                                <span>Tweed Heads</span>
+                            </li>
+                            <li>
+                                <div class="location-dot">
+                                    <div class="dot-pulse"></div>
+                                </div>
+                                <span>Kingscliff</span>
+                            </li>
+                            <li>
+                                <div class="location-dot">
+                                    <div class="dot-pulse"></div>
+                                </div>
+                                <span>Casuarina</span>
+                            </li>
+                            <li>
+                                <div class="location-dot">
+                                    <div class="dot-pulse"></div>
+                                </div>
+                                <span>Banora Point</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="region">
-                <h3>Northern Rivers</h3>
-                <ul>
-                    <li>
-                        <span class="location-marker"></span>
-                        <span>Byron Bay</span>
-                    </li>
-                    <li>
-                        <span class="location-marker"></span>
-                        <span>Ballina</span>
-                    </li>
-                    <li>
-                        <span class="location-marker"></span>
-                        <span>Lennox Head</span>
-                    </li>
-                    <li>
-                        <span class="location-marker"></span>
-                        <span>Evans Head</span>
-                    </li>
-                </ul>
+            <!-- Northern Rivers -->
+            <div class="region-block" data-aos="fade-left">
+                <div class="region-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="region-header">
+                            <span class="region-marker">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="marker-ring"></div>
+                            </span>
+                            <h3>Northern Rivers</h3>
+                        </div>
+                        <ul class="location-list">
+                            <li>
+                                <div class="location-dot">
+                                    <div class="dot-pulse"></div>
+                                </div>
+                                <span>Byron Bay</span>
+                            </li>
+                            <li>
+                                <div class="location-dot">
+                                    <div class="dot-pulse"></div>
+                                </div>
+                                <span>Ballina</span>
+                            </li>
+                            <li>
+                                <div class="location-dot">
+                                    <div class="dot-pulse"></div>
+                                </div>
+                                <span>Lennox Head</span>
+                            </li>
+                            <li>
+                                <div class="location-dot">
+                                    <div class="dot-pulse"></div>
+                                </div>
+                                <span>Evans Head</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <a href="#contact" class="cta-button">
-            <span class="cta-text">Get Your Quote</span>
-            <span class="cta-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </span>
-            <div class="cta-background"></div>
-        </a>
+        <div class="mega-cta-wrapper" data-aos="fade-up">
+            <a href="#contact" class="mega-cta">
+                <span class="mega-cta-text">Transform Your Space Today</span>
+                <div class="mega-cta-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="mega-cta-glow"></div>
+            </a>
+        </div>
     </div>
 </section>
-<!-- Testimonials Section -->
+<style>
+/* Enhanced Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Reset main container */
+    .coverage-areas {
+        padding: 3rem 0; /* Remove horizontal padding from main container */
+        width: 100%;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    /* Content wrapper control */
+    .content-wrapper {
+        width: 90%; /* Use percentage instead of fixed width */
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    /* Fix region container */
+    .regions-container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Control card width */
+    .region-card {
+        width: 100%;
+        margin: 0;
+        padding: 1.25rem;
+        box-sizing: border-box;
+    }
+
+    /* Ensure CTA stays within bounds */
+    .mega-cta-wrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .mega-cta {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-wrapper {
+        width: 92%; /* Slightly wider on smallest screens */
+    }
+
+    .region-card {
+        padding: 1rem;
+    }
+}
+
+/* Safety measures */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+</style>
+<style>
+
+.coverage-areas {
+    position: relative;
+    min-height: 100vh;
+    background: var(--fsp-black);
+    padding: var(--space-xl) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cosmic-grid {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(85, 59, 139, 0.15) 0%,
+        transparent 60%
+    );
+    z-index: 1;
+}
+
+.grid-pattern {
+    position: absolute;
+    inset: -50%;
+    background-image: 
+        linear-gradient(rgba(139, 122, 176, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 122, 176, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transform: perspective(1000px) rotateX(60deg);
+    animation: gridFloat 20s linear infinite;
+    z-index: 0;
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    position: relative;
+    z-index: 2;
+}
+
+/* Header Styles */
+.areas-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.areas-overline {
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--fsp-purple-light);
+    margin-bottom: 1rem;
+}
+
+.areas-title {
+    font-size: var(--h2);
+    font-weight: 200;
+    color: var(--fsp-cream);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.areas-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 300px;
+    margin: 0 auto 1.5rem;
+}
+
+.divider-line {
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, var(--fsp-purple-light), transparent);
+}
+
+.divider-diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--fsp-purple-light);
+    transform: rotate(45deg);
+}
+
+.areas-subtitle {
+    font-size: var(--body);
+    color: var(--fsp-purple-light);
+    opacity: 0.9;
+}
+
+/* Regions Container */
+.regions-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+/* Region Cards */
+.region-card {
+    position: relative;
+    background: rgba(85, 59, 139, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: var(--space-lg);
+    backdrop-filter: blur(10px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+
+.region-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(139, 122, 176, 0.1) 0%,
+        transparent 60%
+    );
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.region-card:hover .card-glow {
+    opacity: 1;
+}
+
+/* Region Headers */
+.region-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.region-marker {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fsp-purple-light);
+    font-size: 1.25rem;
+}
+
+.marker-ring {
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--fsp-purple-light);
+    border-radius: 12px;
+    opacity: 0.3;
+    transition: transform 0.6s ease;
+}
+
+.region-card:hover .marker-ring {
+    transform: rotate(45deg);
+}
+
+.region-header h3 {
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: var(--fsp-cream);
+    letter-spacing: 0.02em;
+}
+
+/* Location Lists */
+.location-list {
+    display: grid;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.location-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    color: var(--fsp-cream);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.location-list li:hover {
+    opacity: 1;
+    transform: translateX(8px);
+}
+
+.location-dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    background: var(--fsp-purple-light);
+    border-radius: 50%;
+}
+
+.dot-pulse {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: var(--fsp-purple-light);
+    opacity: 0.2;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.location-list li:hover .dot-pulse {
+    transform: scale(1);
+}
+
+/* Mega CTA */
+.mega-cta-wrapper {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+.mega-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, 
+        rgba(139, 122, 176, 0.1) 0%, 
+        rgba(85, 59, 139, 0.1) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    color: var(--fsp-cream);
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mega-cta:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, 
+        rgba(139, 122, 176, 0.2) 0%, 
+        rgba(85, 59, 139, 0.2) 100%
+    );
+}
+
+.mega-cta-icon {
+    transition: transform 0.3s ease;
+}
+
+.mega-cta:hover .mega-cta-icon {
+    transform: translateX(8px);
+}
+
+.mega-cta-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.mega-cta:hover .mega-cta-glow {
+    transform: translateX(100%);
+}
+
+@keyframes gridFloat {
+    0% { transform: perspective(1000px) rotateX(60deg) translateY(0); }
+    100% { transform: perspective(1000px) rotateX(60deg) translateY(-40px); }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 1024px) {
+    .regions-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .region-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .mega-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 1.25rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mega-cta {
+        font-size: 1.1rem;
+        padding: 1rem 1.5rem;
+    }
+}
+</style>
+
+<script>
+document.querySelectorAll('.region-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        card.style.setProperty('--mouse-x', `${x}%`);
+        card.style.setProperty('--mouse-y', `${y}%`);
+    });
+});
+</script><!-- Testimonials Section -->
 <section class="testimonials" aria-label="Client Testimonials">
 <div class="testimonials-container">
     <div class="section-header">
@@ -3600,7 +3786,7 @@ color: var(--fsp-blue);
                     </div>
                     <div class="stat-value-wrapper">
                         <div class="value-container">
-                            <span class="counter" data-value="850">0</span>
+                            <span class="counter" data-value="450">0</span>
                             <span class="symbol">+</span>
                         </div>
                         <div class="stat-details">
@@ -3626,7 +3812,7 @@ color: var(--fsp-blue);
                     </div>
                     <div class="stat-value-wrapper">
                         <div class="value-container">
-                            <span class="counter" data-value="98">0</span>
+                            <span class="counter" data-value="100">0</span>
                             <span class="symbol">%</span>
                         </div>
                         <div class="stat-details">
@@ -3652,7 +3838,7 @@ color: var(--fsp-blue);
                     </div>
                     <div class="stat-value-wrapper">
                         <div class="value-container">
-                            <span class="counter" data-value="15">0</span>
+                            <span class="counter" data-value="10">0</span>
                             <span class="symbol">+</span>
                         </div>
                         <div class="stat-details">
@@ -3814,6 +4000,7 @@ color: var(--fsp-blue);
     </div>
 </div>
 </footer>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
