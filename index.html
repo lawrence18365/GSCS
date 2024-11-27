@@ -3283,65 +3283,163 @@ color: var(--fsp-blue);
 </section>
 <style>
 /* Enhanced Mobile Optimizations */
+/* Core mobile styles - needs to override 1024px */
 @media (max-width: 768px) {
-    /* Reset main container */
     .coverage-areas {
-        padding: 3rem 0; /* Remove horizontal padding from main container */
+        padding: 3rem 1rem;
         width: 100%;
-        overflow-x: hidden; /* Prevent horizontal scroll */
+        overflow-x: hidden;
+        background: var(--fsp-black);
     }
 
-    /* Content wrapper control */
     .content-wrapper {
-        width: 90%; /* Use percentage instead of fixed width */
+        width: 92%;
         margin: 0 auto;
-        padding: 0;
+        max-width: 500px;
     }
 
-    /* Fix region container */
     .regions-container {
-        width: 100%;
-        margin: 0;
-        padding: 0;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
-    /* Control card width */
+    /* Card Content - Specificity increased */
+    .region-card .card-content,
+    .region-block .card-content {
+        display: flex !important; /* Override grid display from 1024px */
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+        gap: 1rem !important;
+        width: 100%;
+    }
+
     .region-card {
+        background: rgba(85, 59, 139, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
         width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .region-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+
+    .region-marker {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(85, 59, 139, 0.1);
+        border-radius: 12px;
+        flex-shrink: 0;
+    }
+
+    .region-marker i {
+        color: var(--fsp-purple-light);
+        font-size: 1.25rem;
+    }
+
+    .region-header h3 {
+        font-size: 1.5rem;
+        color: var(--fsp-cream);
+        font-weight: 300;
         margin: 0;
-        padding: 1.25rem;
-        box-sizing: border-box;
     }
 
-    /* Ensure CTA stays within bounds */
-    .mega-cta-wrapper {
-        width: 100%;
+    .location-list {
+        list-style: none;
         padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+        width: 100%;
     }
 
-    .mega-cta {
-        width: 100%;
-        box-sizing: border-box;
+    .location-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.875rem;
+        color: var(--fsp-cream);
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+        font-size: 0.9375rem;
+    }
+
+    .location-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--fsp-purple-light);
+        border-radius: 50%;
+        flex-shrink: 0;
     }
 }
 
-@media (max-width: 480px) {
-    .content-wrapper {
-        width: 92%; /* Slightly wider on smallest screens */
+/* Make sure these cascade properly */
+@media (max-width: 1024px) {
+    .regions-container {
+        width: 100%;
     }
 
-    .region-card {
-        padding: 1rem;
+    /* Override only what's necessary */
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+/* Extra specific mobile styles */
+@media (max-width: 480px) {
+    .content-wrapper {
+        width: 88%;
+    }
+
+    .region-card .card-content {
+        padding: 1.25rem !important;
+    }
+
+    .region-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .location-list li {
+        font-size: 0.875rem;
     }
 }
 
 /* Safety measures */
-* {
-    box-sizing: border-box;
+.region-card,
+.card-content,
+.location-list,
+.region-header {
     max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Force proper display on mobile */
+@media (max-width: 768px) {
+    .region-card *,
+    .card-content * {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    /* Ensure content visibility */
+    .region-marker i,
+    .location-list span {
+        display: inline-block;
+        visibility: visible;
+    }
 }
 </style>
 <style>
