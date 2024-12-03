@@ -1726,83 +1726,179 @@ transform: translateY(-2px);
 }
 
 /* Mobile-only styles - won't affect desktop */
-@media (max-width: 1024px) {
-/* First make the two-column container stack */
-.cta-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 1.5rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-.value-description {
-text-align: center;
-margin-left: 0;
-}
-/* Now the critical fix - force single column inside the card */
-.action-card .card-content {
-    display: flex !important; /* Override any existing display */
-    flex-direction: column !important;
-    align-items: center;
-    gap: 1.5rem;
+/* Mobile-only styles */
+@media (max-width: 768px) {
+    .cta-impact {
+        padding: 60px 0;
+    }
+
+    .cta-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 20px;
+        max-width: 100%;
+    }
+
+    .cta-value {
+        padding: 0;
+    }
+
+    .value-metrics {
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .metric {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+    }
+
+    .metric-value {
+        font-size: 36px;
+    }
+
+    .metric-label {
+        font-size: 13px;
+    }
+
+    .metric-divider {
+        height: 40px;
+    }
+
+    .value-headline {
+        font-size: 36px;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+
+    .value-description {
+        font-size: 16px;
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .action-card {
+        margin: 0;
+        padding: 24px;
+        border-radius: 12px;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .card-header {
+        text-align: center;
+    }
+
+    .card-label {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .card-headline {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .card-description {
+        font-size: 15px;
+        margin-bottom: 24px;
+        padding: 0 10px;
+    }
+
+    .action-features {
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        margin: 0 10px;
+    }
+
+    .feature {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .feature:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 16px;
+        font-size: 16px;
+        border-radius: 8px;
+        text-align: center;
+        justify-content: center;
+    }
 }
 
-.card-label {
+/* Brand section mobile styles */
+.brands-section {
+    padding: 40px 20px;
+    background: #f8f8f8;
+    overflow: hidden;
+}
+
+.brands-container {
+    max-width: 100%;
+}
+
+.brands-title {
     text-align: center;
-    margin-bottom: 0.5rem;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #666;
+    margin-bottom: 30px;
 }
 
-.card-headline {
-    text-align: center;
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
+.brands-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    margin: 0 -20px;
 }
 
-.card-description {
-    text-align: center;
-    max-width: 400px;
-    margin: 0 auto 1.5rem;
+.brands-scroll::-webkit-scrollbar {
+    display: none;
 }
 
-.action-features {
-    width: 100%;
-    background: rgba(85, 59, 139, 0.05);
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.feature {
-    border-bottom: 1px solid rgba(139, 122, 176, 0.08);
-    padding: 0.75rem 0;
-}
-
-.feature:last-child {
-    border-bottom: none;
-}
-
-.action-buttons {
-    width: 100%;
+.brands-row {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    gap: 40px;
+    padding: 0 20px;
 }
 
-.btn-primary,
-.btn-secondary {
-    width: 100%;
+.brand-item {
+    flex: 0 0 140px;
+    height: 60px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-}
-}
-
-@media (max-width: 480px) {
-.gradient-text {
-    font-size: 1.75rem;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.regions-container {
-    gap: 1.5rem;
-}
+.brand-item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 /* Contact Section Enhancements */
 .contact {
@@ -2859,7 +2955,26 @@ color: var(--fsp-blue);
 ::-webkit-scrollbar-thumb:hover {
     background: var(--fsp-blue);
 }
+@media (max-width: 480px) {
+    .nav-logo {
+        width: 90vw !important;
+        max-width: 400px !important;
+        margin-top: -20px !important;
+        border-radius: 20px !important;
+    }
+    
+    .hero-container {
+        padding: 10px;
+    }
+}
 
+/* Super small screens */
+@media (max-width: 350px) {
+    .nav-logo {
+        width: 95vw !important;
+        margin-top: 0 !important;
+    }
+}   
 </style>
 </head>
 <body>
@@ -3985,7 +4100,7 @@ document.querySelectorAll('.region-card').forEach(card => {
                     </div>
                     <div class="stat-value-wrapper">
                         <div class="value-container">
-                            <span class="counter" data-value="200">0</span>
+                            <span class="counter" data-value="100">0</span>
                             <span class="symbol">km</span>
                         </div>
                         <div class="stat-details">
