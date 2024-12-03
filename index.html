@@ -2975,6 +2975,210 @@ color: var(--fsp-blue);
         margin-top: 0 !important;
     }
 }   
+/* Contact Form Mobile Optimizations */
+@media (max-width: 768px) {
+    .contact {
+        padding: 60px 20px;
+    }
+
+    .minimal-input {
+        font-size: 16px !important; /* Prevents iOS zoom */
+        -webkit-appearance: none; /* Removes default iOS styling */
+        appearance: none;
+        background-color: transparent;
+        padding: 15px 0;
+    }
+
+    select.minimal-input {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 20px;
+        padding-right: 30px;
+        border-radius: 0;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    select.minimal-input option {
+        background: #000;
+        color: #fff;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .contact-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Footer Mobile Optimizations */
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 0 0;
+        text-align: center;
+    }
+
+    .footer-inner {
+        padding: 0 20px;
+    }
+
+    .footer-primary {
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-brand {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-logo {
+        width: 140px;
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col h4 {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .footer-col nav {
+        gap: 12px;
+        align-items: center;
+    }
+
+    .footer-col a, 
+    .footer-col span {
+        font-size: 16px;
+    }
+
+    .footer-secondary {
+        padding: 20px 0;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .social-links {
+        margin: 15px 0;
+        justify-content: center;
+    }
+
+    .footer-right {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .copyright {
+        text-align: center;
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .designer-signature {
+        margin-top: 20px;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 13px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 380px) {
+    .footer-col nav {
+        gap: 10px;
+    }
+
+    .footer-col a, 
+    .footer-col span {
+        font-size: 15px;
+    }
+
+    .footer-right {
+        gap: 15px;
+    }
+
+    .footer-right a {
+        font-size: 13px;
+    }
+}
+/* Enhanced Dropdown Styles for Contact Form */
+select.minimal-input {
+    cursor: pointer;
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    background-size: 18px;
+    padding-right: 30px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+select.minimal-input option {
+    background-color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px;
+}
+
+select.minimal-input option:hover {
+    background-color: var(--fsp-purple-dark);
+}
+
+select.minimal-input:focus {
+    outline: none;
+    border-color: var(--fsp-purple-light);
+}
+
+/* Styling the select on hover */
+select.minimal-input:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Remove default select appearance */
+select.minimal-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Firefox specific styles */
+@-moz-document url-prefix() {
+    select.minimal-input {
+        background-color: transparent;
+        padding-right: 30px;
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    select.minimal-input {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 15px 30px 15px 0;
+    }
+    
+    select.minimal-input option {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
 </style>
 </head>
 <body>
@@ -4140,22 +4344,30 @@ document.querySelectorAll('.region-card').forEach(card => {
         </div>
 
         <!-- Ultra-minimal form -->
-        <form class="contact-form">
+        <form class="contact-form" method="POST">
             <div class="input-row">
-                <input type="text" class="minimal-input" placeholder="Name*" required>
-                <input type="email" class="minimal-input" placeholder="Email*" required>
+                <input type="text" class="minimal-input" name="name" placeholder="Name*" required>
+                <input type="email" class="minimal-input" name="email" placeholder="Email*" required>
             </div>
 
             <div class="input-row">
-                <input type="tel" class="minimal-input" placeholder="Phone">
-                <select class="minimal-input">
+                <input type="tel" class="minimal-input" name="phone" placeholder="Phone">
+                <select class="minimal-input" name="project_type" required>
                     <option value="" disabled selected>Project Type*</option>
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial</option>
+                    <option value="new_construction">New Construction</option>
+                    <option value="renovation">Renovation</option>
                 </select>
             </div>
 
-            <textarea class="minimal-input" placeholder="Tell us about your project*" rows="4" required></textarea>
+            <textarea 
+                class="minimal-input" 
+                name="project_details" 
+                placeholder="Tell us about your project*" 
+                rows="4" 
+                required
+            ></textarea>
 
             <button type="submit" class="submit-btn">
                 Send Request
